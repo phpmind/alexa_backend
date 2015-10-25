@@ -1,0 +1,14 @@
+{
+  "name": "alexa",
+  "version": "0.0.0",
+  "description": "alexa serverside",
+  "main": "server.js",
+  "scripts": {
+    "test": "server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^11.0.2"
+  }
+}
