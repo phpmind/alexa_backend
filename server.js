@@ -20,7 +20,7 @@ server.route({
 		var keyword = request.params.keyword.toLowerCase();
 		console.log("Query /articledetail/keyword/" + keyword);
 		var result = jp.query(data, '$..articles[?(@.title.toLowerCase().indexOf("' + keyword + '") > -1)]');
-		reply(result);
+		reply(result[0]);
 	}
 });
 
@@ -76,28 +76,31 @@ server.start(function () {
 var data =  {
 	articles: [
 		{
-			id: "article1",
+			id: "cnncom20151025usoklahomacarintocrowd",
 			category: "us",
 			title: "4 killed, 44 hurt when car hits crowd at Oklahoma State parade during the Weekend",
 			keywords: "Oklahoma",
 			timestamp: "2015/10/25 12:00 EST",
-			body: "A woman suspected of drunken driving crashed a car into a crowd of spectators at Oklahoma State University's homecoming parade, killing four people -- including a 2-year-old -- authorities in Stillwater said Saturday."
+			body: "A woman suspected of drunken driving crashed a car into a crowd of spectators at Oklahoma State University's homecoming parade, killing four people -- including a 2-year-old -- authorities in Stillwater said Saturday.",
+			url:"http://www.cnn.com/2015/10/25/us/oklahoma-car-into-crowd/"
 		},
 		{
-			id: "article2",
+			id: "bleacherreportcomarticles2582440celebratingcollegefootballsspoilerweekend",
 			category: "sports",
 			title: "Celebrating College Football's Spoiler Weekend",
 			keywords: "College Football's",
 			timestamp: "2015/10/23 12:00 EST",
-			body: "It was an unassuming Saturday. In fact, up until 10:11 p.m. eastern time, one might have called it boring. Uneventful. Unsatisfying. An average slate of football games played out as such with few exceptions. Although we love football regardless of the parameters, the harsh, simple reality of an ordinary week was settling in."
+			body: "It was an unassuming Saturday. In fact, up until 10:11 p.m. eastern time, one might have called it boring. Uneventful. Unsatisfying. An average slate of football games played out as such with few exceptions. Although we love football regardless of the parameters, the harsh, simple reality of an ordinary week was settling in.",
+			url : "http://bleacherreport.com/articles/2582440-celebrating-college-footballs-spoiler-weekend"
 		},
 		{
-			id: "article3",
+			id: "moneycnncom20151023technologyballmeramazonapple",
 			category: "technology",
 			title: "Steve Ballmer just went off on Amazon and Apple",
 			keywords: "Amazon Apple",
 			timestamp: "2015/10/24 12:00 EST",
-			body: "Steve Ballmer, electric fanboy owner of the Los Angeles Clippers and former Microsoft CEO, told Bloomberg TV's morning show what he really thinks about Amazon and Apple."
+			body: "Steve Ballmer, electric fanboy owner of the Los Angeles Clippers and former Microsoft CEO, told Bloomberg TV's morning show what he really thinks about Amazon and Apple.",
+			url : "http://money.cnn.com/2015/10/23/technology/ballmer-amazon-apple/"
 		}
 	]
 }
